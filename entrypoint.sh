@@ -4,7 +4,7 @@ set +e
 
 if [ -z "${URL}" ]; then
   echo >&2 "[IMAGENARIUM]: You need to specify URL"
-  exit 1
+  exit 0
 fi
 
 while true; do
