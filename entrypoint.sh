@@ -10,7 +10,7 @@ fi
 while true; do
   echo "[IMAGENARIUM]: Checking HTTP status for URL: ${URL}"
 
-  status=$( curl -sIX GET "${URL}" | grep HTTP |  awk '{print $2}' )
+  status=$( curl -sIX GET "${URL}" --connect-timeout 5 --max-time 10 | grep HTTP |  awk '{print $2}' )
 
   if [ "$status" == "200" ]; then
     echo "[IMAGENARIUM]: Success"
